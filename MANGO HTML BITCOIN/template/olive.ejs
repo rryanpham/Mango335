@@ -1,0 +1,220 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <title>MANGO</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="code.js"></script>
+    <meta charset="utf-8">
+
+</head>
+
+<body>
+
+
+    <ul>
+        <li><a class="active" href="/"><img id="smallLogo" src="/LOGOS/creamlogo.png" alt="MANGO"></a></li>
+        <li><a href="/">Clothing</a></li>
+        <li><a href="/account">Account</a></li>
+    </ul>
+
+    <h2>ORDER FORM</h2>
+    <br>
+    <form action="oliveConfirm" method="POST">
+
+
+        <pre><h4>Billing Address                        Payment                                     Cart</h4></pre>
+        <pre>Full Name:  <input type="text" id="name" name="name" placeholder="John M. Doe" size="25">          Name on Card:       </label><input type="text" id="cname" name="cardname" placeholder="John More Doe" size="25"><br></pre>
+        <pre>Email:      <input type="email" id="email" name="email" placeholder="john@example.com" size="25">          Credit Card Number: </label><input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" size="25"><br></pre>
+        <pre>Address:    <input type="text" id="adr" name="address" placeholder="542 W. 15th Street" size="25">          Exp Month:          </label><input type="text" id="expmonth" name="expmonth" placeholder="September" size="25"><br></pre>
+        <pre>City:       <input type="text" id="city" name="city" placeholder="New York" size="25">          Exp Year: <input type="text" id="expyear" name="expyear" placeholder="2018" size="5">      CVV: </label><input type="text" id="cvv" name="cvv" placeholder="352" size="5"></pre>
+        <pre>State:      <input type="text" id="city" name="state" placeholder="NY" size="7"> Zip: <input type="text" id="city" name="city" placeholder="10001" size="7">          <input type="submit" value="Place Order" class="btn">  </pre>
+        <pre>Current Bitcoin Price ($USD) :<input type = "text" id = "currPrice" value = "0" disabled></pre>
+        <img src="/Sweaters/olive/swolfr.png" class="orderImg">
+
+        <script>
+             let url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"; 
+        fetch(url)
+        .then(response => response.json())
+            .then(json => printPrice(json))
+        
+
+        function printPrice(json) {
+           let price = json.find(entry => entry.id === "bitcoin").current_price;
+            console.log(price);
+            document.querySelector("#currPrice").value = price;
+        }
+        </script>
+
+
+    </form>
+
+
+
+
+
+</body>
+
+<style>
+    html {
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 18px;
+    color: #97978D;
+
+    background-color: white;
+
+}
+
+
+
+
+
+
+#status {
+    font-size: 16px;
+    color: #C8C8C8;
+}
+
+        body {
+            padding-top: 80px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #97978D;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: #C8C8C8;
+            font-size: 25px;
+            text-align: center;
+            padding: 10px 160px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #97978d;
+        }
+
+        #smallLogo {
+            height:50px;
+        }
+
+        #formLogo {
+            width:40%;
+        }
+        
+        .col {
+            float: left;
+            width: 50%;
+        }
+
+        .col2o {
+            float: left;
+            width: 27%;
+        }
+
+        .col2c {
+            float: right;
+            width: 27%;
+        }
+
+          
+         /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .desc {
+            font-size: 25px;
+            color: #111;
+        }
+        
+        .item {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 50px;
+            width: 60%;
+            margin: auto;
+        }
+
+        a {
+            text-decoration:none;
+        }
+
+        .price {
+            font-family: "Lucida Console", "Courier New", monospace;
+            font-size: 18px;
+            color: #97978D;
+        }
+
+        .form {
+            border:1px solid black;
+
+            margin-left: 30%;
+            margin-right: 30%;
+            margin-top: 10%;
+            border: #111;
+            background-color: #97978D;
+            text-align: center;
+            height: 30%;
+            padding-bottom: 10%;
+        }
+
+        .tadaaa {
+            font-size: 50px;
+            color: #C8C8C8;
+        }
+
+        #emailacct {
+            background-color: #C8C8C8;
+            width: 60%;
+            text-align: center; 
+        }
+        .orderImg {
+  width: 10%;
+  position: relative;
+  bottom: 250px;
+  left: 1000px;
+}
+
+.btn {
+  background-color: #97978d;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 25%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+
+
+</style>
+
+</html>

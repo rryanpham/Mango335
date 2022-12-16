@@ -1,0 +1,183 @@
+<!-- Recipt-->
+
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	<title>MANGO</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="code.js"></script>
+    <meta charset="utf-8">
+
+</head>
+
+<body>
+
+
+    <ul>
+        <li><a class="active" href="/"><img id="smallLogo" src="LOGOS/creamlogo.png" alt="MANGO"></a></li>
+        <li><a href="/">Clothing</a></li>
+        <li><a href="account">Account</a></li>
+    </ul>
+
+
+    <h1>Order Confirmation</h1>
+	<div style="margin-bottom:10px;">
+         <label><b>Name: </b><%- name %></label><br>
+            <label><b>Email: </b><%- email %></label><br>
+            <label><b>Address: </b><%- address %></label><br>
+            <label><b>City:</b> <%- city %></label><br>
+            <label><b>State:</b> <%- state %></label><br>
+            <label><b>Color:</b> Olive</label><br>
+            
+	</div>
+
+
+
+
+
+
+</body>
+<style>
+    html {
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 18px;
+    color: #97978D;
+
+    background-color: white;
+
+}
+
+
+
+
+
+
+#status {
+    font-size: 16px;
+    color: #C8C8C8;
+}
+
+        body {
+            padding-top: 80px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #97978D;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: #C8C8C8;
+            font-size: 25px;
+            text-align: center;
+            padding: 10px 160px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #97978d;
+        }
+
+        #smallLogo {
+            height:50px;
+        }
+
+        #formLogo {
+            width:40%;
+        }
+        
+        .col {
+            float: left;
+            width: 50%;
+        }
+
+        .col2o {
+            float: left;
+            width: 27%;
+        }
+
+        .col2c {
+            float: right;
+            width: 27%;
+        }
+
+          
+         /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .desc {
+            font-size: 25px;
+            color: #111;
+        }
+        
+        .item {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 50px;
+            width: 60%;
+            margin: auto;
+        }
+
+        a {
+            text-decoration:none;
+        }
+
+        .price {
+            font-family: "Lucida Console", "Courier New", monospace;
+            font-size: 18px;
+            color: #97978D;
+        }
+
+        .form {
+            border:1px solid black;
+
+            margin-left: 30%;
+            margin-right: 30%;
+            margin-top: 10%;
+            border: #111;
+            background-color: #97978D;
+            text-align: center;
+            height: 30%;
+            padding-bottom: 10%;
+        }
+
+        .tadaaa {
+            font-size: 50px;
+            color: #C8C8C8;
+        }
+
+        #emailacct {
+            background-color: #C8C8C8;
+            width: 60%;
+            text-align: center; 
+        }
+
+</style>
+
+</html>

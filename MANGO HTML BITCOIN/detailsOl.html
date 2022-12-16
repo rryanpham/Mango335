@@ -1,0 +1,102 @@
+
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	<title>MANGO</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="code.js"></script>
+    <meta charset="utf-8">
+
+</head>
+
+<body>
+
+
+    <ul>
+        <li><a class="active" href="MANGO.html"><img id="smallLogo" src="LOGOS/creamlogo.png" alt="MANGO"></a></li>
+        <li><a href="MANGO.html">Clothing</a></li>
+        <li><a href="account.html">Account</a></li>
+    </ul>
+
+
+    <div class="products">
+        <div class="row">
+            
+            <div class="col"> 
+                <a href="https://www.w3docs.com/"> 
+                <img id="olive" class="item" src="Sweaters/olive/swolfr.png" alt="OLIVE SWEATER"> 
+                
+                </a>
+            </div>
+            <div class="col"> 
+                <div class="row">
+            
+                    <!--.DETAILS.-->
+                    <div class="col2o">  
+                        <img class="item" src="Sweaters/olive/swolrs.png" alt="OLIVE SWEATER"> 
+                        <img class="item" src="Sweaters/olive/swolls.png" alt="OLIVE SWEATER">
+                    </div>
+                    <div class="col"> 
+                        <img class="item" src="Sweaters/olive/swolbk.png" alt="OLIVE SWEATER"> 
+                        <br><br>
+                        <pre class="desc">
+    The Classic Olive Hoodie
+ A comfortable luxurious & soft
+ sweater for everyday wear, made
+     with 100% Turkish Cotten.
+
+   The Sweater Weather hoodie. 
+             79.99
+
+
+           <a href="#contact" class="desc"><u><i>Order Now</i></u></a>
+                        </pre>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+    <script>
+        
+        let url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"; 
+        fetch(url)
+        .then(response => response.json())
+            .then(json => printPrice(json))
+        
+
+        function printPrice(json) {
+           let price = json.find(entry => entry.id === "bitcoin").current_price;
+            console.log(price);
+            document.querySelector("#currPrice").value = price;
+        }
+       
+
+    </script>
+
+    <form action="-" method="POST">
+    <h3>ORDER FORM</h3>
+
+            Name:        <input type="text" id="name" name="name" placeholder="John M. Doe"> <br>
+            Email:       <input type="email" id="email" name="email" placeholder="john@example.com"> <br>
+            Address:     <input type="text" id="adr" name="address" placeholder="542 W. 15th Street"> <br>
+            Card Number: <input type="text" id="card" name="card" placeholder="New York"> <br><br>
+
+            Current Bitcoin Price ($USD) :<input type = "text" id = "currPrice" value = "0" disabled>
+
+
+
+        </form>
+
+
+
+
+</body>
+
+</html>
